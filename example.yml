@@ -1,0 +1,24 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 10
+      arrivalRate: 1
+  plugins:
+    faker:
+      locale: de
+      defaultSize: 250
+  variables:
+    title: '$faker.name.title'
+    firstName: [ '$faker.name.firstName' ]
+    lastName: [ '$faker.name.lastName', 100 ]
+
+scenarios:
+  - flow:
+    - get:
+        url: "/search?q={{ firstName }}"
+  - flow:
+    - get:
+        url: "/search?q={{ $faker('name.firstName') }}"
+  - flow:
+    - get:
+        url: "/search?q={{ $fake('{{name.firstName}} {{name.lastName}}, {{name.suffix}} ') }}"

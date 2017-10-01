@@ -1,0 +1,29 @@
+{
+  "name": "artillery-plugin-faker",
+  "version": "1.0.0",
+  "description": "Use faker.js in Artillery loadtest configurations",
+  "main": "index.js",
+  "dependencies": {
+    "debug": "^3.1.0",
+    "faker": "^4.1.0",
+    "lodash.get": "^4.4.2"
+  },
+  "devDependencies": {
+    "ava": "^0.22.0",
+    "lodash.isequal": "^4.5.0",
+    "require-no-cache": "^0.2.1",
+    "semistandard": "^11.0.0"
+  },
+  "scripts": {
+    "test": "ava",
+    "precommit": "npm run lint",
+    "lint": "semistandard"
+  },
+  "keywords": [
+    "faker",
+    "artillery",
+    "loadtest"
+  ],
+  "author": "Fabian Schneider <fabbbbbi+git@googlemail.com>",
+  "license": "MPL-2.0"
+}

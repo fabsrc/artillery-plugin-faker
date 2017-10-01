@@ -49,7 +49,7 @@ function replaceVariablesWithFakeValues (variables, defaultSize) {
 
       if (func) {
         if (isArray) {
-          variables[key] = Array(size).map(a => func());
+          variables[key] = Array(size).fill(0).map(a => func());
         } else {
           variables[key] = func();
         }

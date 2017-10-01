@@ -35,6 +35,7 @@ test('creates an array of random fake values', t => {
   FakerPlugin(script);
   t.true(Array.isArray(script.config.variables.test));
   t.false(_.isEqual(script.config.variables.test, [ '$faker.name.firstName' ]));
+  t.true(script.config.variables.test.every(a => typeof a === 'string'));
 });
 
 test('creates an array of a defined default number of random fake values', t => {
@@ -43,7 +44,9 @@ test('creates an array of a defined default number of random fake values', t => 
   script.config.plugins.faker.defaultSize = 1337;
   FakerPlugin(script);
   t.true(script.config.variables.test.length === 1337);
+  t.true(script.config.variables.test.every(a => typeof a === 'number'));
   t.true(script.config.variables.testTwo.length === 1337);
+  t.true(script.config.variables.testTwo.every(a => typeof a === 'string'));
 });
 
 test('creates an array of a defined number of random fake values', t => {
@@ -51,7 +54,9 @@ test('creates an array of a defined number of random fake values', t => {
   script.config.variables.testTwo = [ '$faker.random.number', '20' ];
   FakerPlugin(script);
   t.true(script.config.variables.test.length === 10);
+  t.true(script.config.variables.test.every(a => typeof a === 'number'));
   t.true(script.config.variables.testTwo.length === 20);
+  t.true(script.config.variables.testTwo.every(a => typeof a === 'number'));
 });
 
 test('uses default size for invalid array size', t => {

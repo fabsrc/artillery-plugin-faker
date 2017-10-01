@@ -1,5 +1,11 @@
 # Artillery Faker
 
+[![Build Status](https://img.shields.io/travis/fabsrc/artillery-plugin-faker.svg?style=flat-square)](https://travis-ci.org/fabsrc/artillery-plugin-faker)
+[![npm](https://img.shields.io/npm/v/artillery-plugin-faker.svg?style=flat-square)](https://www.npmjs.com/package/artillery-plugin-faker)
+[![Dependencies](https://img.shields.io/david/fabsrc/artillery-plugin-faker.svg?style=flat-square)](https://david-dm.org/fabsrc/artillery-plugin-faker)
+[![Development Dependencies](https://img.shields.io/david/dev/fabsrc/artillery-plugin-faker.svg?style=flat-square)](https://david-dm.org/fabsrc/artillery-plugin-faker?type=dev)
+[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg?style=flat-square)](https://github.com/Flet/semistandard)
+
 Makes [faker.js](https://github.com/Marak/faker.js) available for [Artillery](https://artillery.io/) loadtest configurations.
 
 ## Install

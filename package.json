@@ -1,6 +1,6 @@
 {
   "name": "artillery-plugin-faker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Use faker.js in Artillery loadtest configurations",
   "main": "index.js",
   "dependencies": {

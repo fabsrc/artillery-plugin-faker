@@ -11,7 +11,7 @@ Makes [faker.js](https://github.com/Marak/faker.js) available for [Artillery](ht
 ## Install
 
 ```sh
-$ npm install artillery-plugin-faker
+$ npm install -g artillery-plugin-faker
 ```
 
 ## Usage

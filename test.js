@@ -1,5 +1,4 @@
 const test = require('ava');
-const _ = { isEqual: require('lodash.isequal') };
 
 let faker, FakerPlugin, script;
 
@@ -34,7 +33,7 @@ test('creates an array of random fake values', t => {
   script.config.variables.test = [ '$faker.name.firstName' ];
   FakerPlugin(script);
   t.true(Array.isArray(script.config.variables.test));
-  t.false(_.isEqual(script.config.variables.test, [ '$faker.name.firstName' ]));
+  t.notDeepEqual(script.config.variables.test, [ '$faker.name.firstName' ]);
   t.true(script.config.variables.test.every(a => typeof a === 'string'));
 });
 
@@ -63,7 +62,7 @@ test('uses default size for invalid array size', t => {
   script.config.variables.test = [ '$faker.random.number', 'invalid' ];
   script.config.plugins.faker.defaultSize = 1337;
   FakerPlugin(script);
-  t.true(script.config.variables.test.length === 1337);
+  t.is(script.config.variables.test.length, 1337);
 });
 
 test('returns original variable for invalid faker function', t => {
@@ -71,7 +70,7 @@ test('returns original variable for invalid faker function', t => {
   script.config.variables.testTwo = [ '$faker.invalid' ];
   FakerPlugin(script);
   t.is(script.config.variables.test, '$faker.invalid');
-  t.true(_.isEqual(script.config.variables.testTwo, [ '$faker.invalid' ]));
+  t.deepEqual(script.config.variables.testTwo, [ '$faker.invalid' ]);
 });
 
 test('attaches fakerPluginAttachFunctions function to beforeScenario', t => {

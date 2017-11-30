@@ -23,8 +23,8 @@ function FakerPlugin (script, ee) {
   script.config.processor.fakerPluginAttachFunctions = fakerPluginAttachFunctions;
 
   script.scenarios.forEach(scenario => {
-    scenario.beforeRequest = scenario.beforeRequest || [];
-    scenario.beforeRequest.push('fakerPluginAttachFunctions');
+    scenario.beforeScenario = scenario.beforeScenario || [];
+    scenario.beforeScenario.push('fakerPluginAttachFunctions');
   });
 
   debug('Plugin initialized');
@@ -63,7 +63,7 @@ function fakerFunc (path) {
   return func ? func() : path;
 }
 
-function fakerPluginAttachFunctions (requestParams, userContext, ee, next) {
+function fakerPluginAttachFunctions (userContext, ee, next) {
   userContext.funcs.$faker = fakerFunc;
   userContext.funcs.$fake = faker.fake;
 

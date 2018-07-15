@@ -9,9 +9,9 @@
     "lodash.get": "^4.4.2"
   },
   "devDependencies": {
-    "ava": "^0.24.0",
+    "ava": "^0.25.0",
     "require-no-cache": "^0.2.1",
-    "semistandard": "^11.0.0"
+    "semistandard": "^12.0.1"
   },
   "scripts": {
     "test": "ava",
@@ -24,5 +24,16 @@
     "loadtest"
   ],
   "author": "Fabian Schneider <fabbbbbi+git@googlemail.com>",
-  "license": "MPL-2.0"
+  "license": "MPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fabsrc/artillery-plugin-faker"
+  },
+  "bugs": {
+    "url": "https://github.com/fabsrc/artillery-plugin-faker/issues"
+  },
+  "homepage": "https://github.com/fabsrc/artillery-plugin-faker#readme",
+  "engines": {
+    "node": ">= 6"
+  }
 }

@@ -4,14 +4,14 @@
   "description": "Use faker.js in Artillery loadtest configurations",
   "main": "index.js",
   "dependencies": {
-    "debug": "^4.1.0",
+    "debug": "^4.1.1",
     "faker": "^4.1.0",
     "lodash.get": "^4.4.2"
   },
   "devDependencies": {
-    "ava": "^0.25.0",
+    "ava": "^1.2.1",
     "require-no-cache": "^0.2.1",
-    "semistandard": "*"
+    "semistandard": "^13.0.1"
   },
   "scripts": {
     "test": "ava",

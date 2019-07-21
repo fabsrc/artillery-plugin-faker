@@ -3,13 +3,16 @@
   "version": "1.0.5",
   "description": "Use faker.js in Artillery loadtest configurations",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "dependencies": {
     "debug": "^4.1.1",
     "faker": "^4.1.0",
     "lodash.get": "^4.4.2"
   },
   "devDependencies": {
-    "ava": "^1.2.1",
+    "ava": "^2.2.0",
     "require-no-cache": "^0.2.1",
     "semistandard": "^13.0.1"
   },
@@ -34,6 +37,6 @@
   },
   "homepage": "https://github.com/fabsrc/artillery-plugin-faker#readme",
   "engines": {
-    "node": ">= 6"
+    "node": ">= 8"
   }
 }

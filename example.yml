@@ -6,19 +6,18 @@ config:
   plugins:
     faker:
       locale: de
-      defaultSize: 250
   variables:
     title: '$faker.name.title'
-    firstName: [ '$faker.name.firstName' ]
-    lastName: [ '$faker.name.lastName', 100 ]
+    firstName: '$faker.name.firstName'
+    lastName: '$faker.name.lastName'
 
 scenarios:
+  - flow:
+    - get:
+        url: "/search?q={{ lastName }}"
   - flow:
     - get:
         url: "/search?q={{ firstName }}"
   - flow:
     - get:
-        url: "/search?q={{ $faker('name.firstName') }}"
-  - flow:
-    - get:
-        url: "/search?q={{ $fake('{{name.firstName}} {{name.lastName}}, {{name.suffix}} ') }}"
+        url: "/search?q={{ firstName }} {{ lastName }}"

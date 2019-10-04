@@ -42,7 +42,7 @@ test('uses original variable for invalid faker function', t => {
 });
 
 test('attaches fakerPluginCreateVariables function to beforeRequest hook', t => {
-  script.scenarios = [ { flow: { get: { url: 'http://test.local' } } } ];
+  script.scenarios = [{ flow: { get: { url: 'http://test.local' } } }];
   FakerPlugin(script);
   t.deepEqual(script.scenarios[0].beforeRequest, ['fakerPluginCreateVariables']);
 });

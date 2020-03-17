@@ -22,31 +22,36 @@ Add the plugin to your loadtest configuration:
 config:
   plugins:
     faker:
-      locale: 'en'
+      locale: en
 ```
 
 ### Options
 
-* `locale` (default: `en`) sets the locale of *faker.js*.
+- `locale` (default: `en`) sets the locale of _faker.js_.
 
 ### Example
 
-Using a string prefixed with `$faker.` as variable value will result in a random variable value returned by the indicated *faker.js* function.
+Using a string prefixed with `$faker.` as variable value will result in a random variable value returned by the indicated _faker.js_ function.
 
 ```yaml
 config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 10
+      arrivalRate: 1
   plugins:
-    faker: {}
+    faker:
+      locale: en
   variables:
-    title: '$faker.name.title'
-    firstName: '$faker.name.firstName'
-    lastName: '$faker.name.lastName'
-  scenarios:
-    - flow:
+    firstName: "$faker.name.firstName"
+
+scenarios:
+  - flow:
+      - log: "Making request with query: {{ firstName }}"
       - get:
-          url: "/search?q={{ firstName }} {{ lastName }}"
+          url: "/search?q={{ firstName }}"
 ```
 
-For a complete list of available *faker.js* functions, have a look at the [faker.js documentation](https://github.com/Marak/faker.js#api-methods). Please note that no parameters can be passed to the *faker.js* functions at this time.
+For a complete list of available _faker.js_ functions, have a look at the [faker.js documentation](https://github.com/Marak/faker.js#api-methods). Please note that no parameters can be passed to the _faker.js_ functions at this time.
 
-*Have a look at the `example.yml` file for a fully working example.*
+_Have a look at the `example.yml` file for a fully working example._

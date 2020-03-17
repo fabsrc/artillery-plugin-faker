@@ -41,8 +41,8 @@ test('uses original variable for invalid faker function', t => {
   t.is(context.vars.test, '$faker.invalid');
 });
 
-test('attaches fakerPluginCreateVariables function to beforeRequest hook', t => {
+test('attaches fakerPluginCreateVariables function to beforeScenario hook', t => {
   script.scenarios = [{ flow: { get: { url: 'http://test.local' } } }];
   FakerPlugin(script);
-  t.deepEqual(script.scenarios[0].beforeRequest, ['fakerPluginCreateVariables']);
+  t.deepEqual(script.scenarios[0].beforeScenario, ['fakerPluginCreateVariables']);
 });

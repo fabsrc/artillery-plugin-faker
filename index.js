@@ -19,8 +19,8 @@ function FakerPlugin (script, events) {
   script.config.processor.fakerPluginCreateVariables = fakerPluginCreateVariables;
 
   script.scenarios.forEach(scenario => {
-    scenario.beforeRequest = scenario.beforeRequest || [];
-    scenario.beforeRequest.push('fakerPluginCreateVariables');
+    scenario.beforeScenario = scenario.beforeScenario || [];
+    scenario.beforeScenario.push('fakerPluginCreateVariables');
   });
 
   debug('Plugin initialized');

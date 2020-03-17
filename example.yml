@@ -5,19 +5,21 @@ config:
       arrivalRate: 1
   plugins:
     faker:
-      locale: de
+      locale: en
   variables:
-    title: '$faker.name.title'
-    firstName: '$faker.name.firstName'
-    lastName: '$faker.name.lastName'
+    firstName: "$faker.name.firstName"
+    lastName: "$faker.name.lastName"
 
 scenarios:
   - flow:
-    - get:
-        url: "/search?q={{ lastName }}"
+      - log: "lastName: {{ lastName }}"
+      - get:
+          url: "/search?q={{ lastName }}"
   - flow:
-    - get:
-        url: "/search?q={{ firstName }}"
+      - log: "firstName: {{ firstName }}"
+      - get:
+          url: "/search?q={{ firstName }}"
   - flow:
-    - get:
-        url: "/search?q={{ firstName }} {{ lastName }}"
+      - log: "fullName: {{ firstName }} {{ lastName }}"
+      - get:
+          url: "/search?q={{ firstName }} {{ lastName }}"

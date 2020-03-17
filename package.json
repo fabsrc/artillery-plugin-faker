@@ -14,12 +14,12 @@
   "devDependencies": {
     "ava": "^3.5.0",
     "require-no-cache": "^0.2.1",
-    "semistandard": "^14.2.0"
+    "standard": "^14.3.3"
   },
   "scripts": {
     "test": "ava",
     "precommit": "npm run lint",
-    "lint": "semistandard"
+    "lint": "standard"
   },
   "keywords": [
     "faker",

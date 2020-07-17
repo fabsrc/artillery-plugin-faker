@@ -12,9 +12,9 @@
     "lodash.get": "^4.4.2"
   },
   "devDependencies": {
-    "ava": "^3.5.0",
+    "ava": "^3.10.1",
     "require-no-cache": "^0.2.1",
-    "standard": "^14.3.3"
+    "standard": "^14.3.4"
   },
   "scripts": {
     "test": "ava",

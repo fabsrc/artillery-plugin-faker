@@ -37,6 +37,6 @@
   },
   "homepage": "https://github.com/fabsrc/artillery-plugin-faker#readme",
   "engines": {
-    "node": ">= 8"
+    "node": ">= 10"
   }
 }

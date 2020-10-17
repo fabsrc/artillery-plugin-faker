@@ -1,6 +1,6 @@
 # Artillery Faker
 
-[![Build Status](https://img.shields.io/travis/fabsrc/artillery-plugin-faker.svg?style=flat-square)](https://travis-ci.org/fabsrc/artillery-plugin-faker)
+[![Build Status](https://img.shields.io/github/workflow/status/fabsrc/artillery-plugin-faker/Node.js%20CI/master.svg?style=flat-square)](https://github.com/fabsrc/artillery-plugin-faker/actions?query=workflow%3A%22Node.js+CI%22)
 [![npm](https://img.shields.io/npm/v/artillery-plugin-faker.svg?style=flat-square)](https://www.npmjs.com/package/artillery-plugin-faker)
 [![Dependencies](https://img.shields.io/david/fabsrc/artillery-plugin-faker.svg?style=flat-square)](https://david-dm.org/fabsrc/artillery-plugin-faker)
 [![Development Dependencies](https://img.shields.io/david/dev/fabsrc/artillery-plugin-faker.svg?style=flat-square)](https://david-dm.org/fabsrc/artillery-plugin-faker?type=dev)

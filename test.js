@@ -3,7 +3,7 @@ const test = require('ava')
 let faker, FakerPlugin, script
 
 test.beforeEach(t => {
-  faker = require('require-no-cache')('faker')
+  faker = (require('require-no-cache')('@faker-js/faker')).faker
   FakerPlugin = require('require-no-cache')('./index').Plugin
   script = {
     config: {

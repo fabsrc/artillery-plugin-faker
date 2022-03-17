@@ -1,5 +1,5 @@
 const debug = require('debug')('plugin:faker')
-const faker = require('faker')
+const { faker } = require('@faker-js/faker')
 const get = require('lodash.get')
 
 module.exports.Plugin = FakerPlugin

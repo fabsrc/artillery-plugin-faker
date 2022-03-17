@@ -4,7 +4,7 @@
 [![npm](https://img.shields.io/npm/v/artillery-plugin-faker.svg?style=flat-square)](https://www.npmjs.com/package/artillery-plugin-faker)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](https://standardjs.com)
 
-Makes [faker.js](https://github.com/Marak/faker.js) available for [Artillery](https://artillery.io/) loadtest configurations.
+Makes [faker.js](https://github.com/faker-js/faker) available for [Artillery](https://artillery.io/) loadtest configurations.
 
 ## Install
 
@@ -50,6 +50,6 @@ scenarios:
           url: "/search?q={{ firstName }}"
 ```
 
-For a complete list of available _faker.js_ functions, have a look at the [faker.js documentation](https://github.com/Marak/faker.js#api-methods). Please note that no parameters can be passed to the _faker.js_ functions at this time.
+For a complete list of available _faker.js_ functions, have a look at the [faker.js documentation](https://github.com/faker-js/faker#api-methods). Please note that no parameters can be passed to the _faker.js_ functions at this time.
 
 _Have a look at the `example.yml` file for a fully working example._

@@ -7,14 +7,14 @@
     "index.js"
   ],
   "dependencies": {
-    "@faker-js/faker": "^6.0.0",
+    "@faker-js/faker": "^7.5.0",
     "debug": "^4.3.4",
     "lodash.get": "^4.4.2"
   },
   "devDependencies": {
-    "ava": "^4.1.0",
+    "ava": "^4.3.3",
     "require-no-cache": "^0.2.1",
-    "standard": "^16.0.4"
+    "standard": "^17.0.0"
   },
   "scripts": {
     "test": "ava",

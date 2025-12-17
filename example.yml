@@ -7,8 +7,8 @@ config:
     faker:
       locale: en
   variables:
-    firstName: "$faker.name.firstName"
-    lastName: "$faker.name.lastName"
+    firstName: "$faker.person.firstName"
+    lastName: "$faker.person.lastName"
 
 scenarios:
   - flow:

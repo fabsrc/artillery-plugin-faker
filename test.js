@@ -1,10 +1,10 @@
-const test = require('ava')
+const assert = require('node:assert')
+const { test, beforeEach } = require('node:test')
+const FakerPlugin = require('./index').Plugin
 
-let faker, FakerPlugin, script
+let script
 
-test.beforeEach(t => {
-  faker = (require('require-no-cache')('@faker-js/faker')).faker
-  FakerPlugin = require('require-no-cache')('./index').Plugin
+beforeEach(() => {
   script = {
     config: {
       plugins: {
@@ -18,16 +18,16 @@ test.beforeEach(t => {
 
 test('sets faker locale', t => {
   script.config.plugins.faker.locale = 'de'
-  FakerPlugin(script)
-  t.is(faker.locale, 'de')
+  const plugin = new FakerPlugin(script)
+  assert.equal(plugin.faker.getMetadata().code, 'de')
 })
 
 test('creates a random fake value', t => {
-  const context = { vars: { test: '$faker.name.firstName' } }
-  const plugin = FakerPlugin(script)
+  const context = { vars: { test: '$faker.person.firstName' } }
+  const plugin = new FakerPlugin(script)
   plugin.script.config.processor.fakerPluginCreateVariables(context, undefined, () => undefined)
-  t.true(typeof context.vars.test === 'string')
-  t.not(context.vars.test, '$faker.name.firstName')
+  assert.equal(typeof context.vars.test, 'string')
+  assert.notEqual(context.vars.test, '$faker.person.firstName')
 })
 
 test('uses original variable for invalid faker function', t => {
@@ -36,13 +36,14 @@ test('uses original variable for invalid faker function', t => {
       test: '$faker.invalid'
     }
   }
-  const plugin = FakerPlugin(script)
+  const plugin = new FakerPlugin(script)
   plugin.script.config.processor.fakerPluginCreateVariables(context, undefined, () => undefined)
-  t.is(context.vars.test, '$faker.invalid')
+  assert.equal(context.vars.test, '$faker.invalid')
 })
 
 test('attaches fakerPluginCreateVariables function to beforeScenario hook', t => {
   script.scenarios = [{ flow: { get: { url: 'http://test.local' } } }]
-  FakerPlugin(script)
-  t.deepEqual(script.scenarios[0].beforeScenario, ['fakerPluginCreateVariables'])
+  const plugin = new FakerPlugin(script)
+  assert.ok(plugin)
+  assert.ok(script.scenarios[0].beforeScenario?.includes('fakerPluginCreateVariables'))
 })

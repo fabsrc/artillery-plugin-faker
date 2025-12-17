@@ -4,12 +4,16 @@
 [![npm](https://img.shields.io/npm/v/artillery-plugin-faker.svg?style=flat-square)](https://www.npmjs.com/package/artillery-plugin-faker)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg?style=flat-square)](https://standardjs.com)
 
-Makes [faker.js](https://github.com/faker-js/faker) available for [Artillery](https://artillery.io/) load test configurations.
+Makes [faker.js](https://fakerjs.dev) available for [Artillery](https://artillery.io/) load test configurations.
+
+> [!TIP]
+> Artillery also provides a [fake-data plugin](https://www.artillery.io/docs/reference/extensions/fake-data) (powered by [falso](https://ngneat.github.io/falso/docs/getting-started/)).
+> Use that for simple, integrated fake values — use this plugin when you need faker.js' full API, locale support, or specific faker functions.
 
 ## Install
 
 ```sh
-$ npm install -g artillery-plugin-faker
+npm install -g artillery-plugin-faker
 ```
 
 ## Usage
@@ -41,7 +45,7 @@ config:
     faker:
       locale: en
   variables:
-    firstName: "$faker.name.firstName"
+    firstName: "$faker.person.firstName"
 
 scenarios:
   - flow:
@@ -52,4 +56,8 @@ scenarios:
 
 For a complete list of available _faker.js_ functions, have a look at the [faker.js documentation](https://fakerjs.dev/api/). Please note that no parameters can be passed to the _faker.js_ functions at this time.
 
-_Have a look at the `example.yml` file for a fully working example._
+_Have a look at the `example.yml` file for a fully working example:_
+
+```sh
+artillery run example.yml
+```
